@@ -1,0 +1,41 @@
+
+
+/ to predict if the given nunmber is strong number or not 
+
+
+// code
+#include <stdio.h>
+#include <math.h>
+int main()
+    {
+        long long int num1,num,rem,sum=0,fact=1,i;
+    scanf("%lld",&num);
+    num1=num;
+    while(num>0){
+        fact=1;
+        rem=num%10;
+        if(rem==0 || rem==1){
+            fact=1;
+        }
+        else{
+            for(i=rem;i>=2;i--){
+                fact*=i;
+            }
+        }
+        sum+=fact;
+        num=num/10;
+    }
+    printf("%lld %lld\n",sum ,num1);
+    if(sum==num1){
+        printf("Strong Number");
+    }
+    else{
+        printf("Not a Strong Number");
+    }    
+
+
+    
+
+    return 0;
+}
+
